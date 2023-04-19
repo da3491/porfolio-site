@@ -38,14 +38,14 @@ const ImageLoader = () => {
   useEffect(() => {
     async function loadImage() {
       const { default: image } = await import(
-        `../assets/images/${theme.imageMobile}`
+        `../assets/images/${theme.imageMobile}.jpg`
       );
       setImgSrc(image);
     }
     loadImage();
   }, [theme.imageDesktop]);
 
-  const srcSet = `"../assets/images/${theme.imageMobile}" 1200w, "../assets/images/${theme.imageDesktop}" 2400w`;
+  // const srcSet = `"../assets/images/${theme.imageMobile}" 1200w, "../assets/images/${theme.imageDesktop}" 2400w`;
 
   console.log(theme.imageDesktop);
   console.log(theme.imageMobile);

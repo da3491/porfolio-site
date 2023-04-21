@@ -21,6 +21,8 @@ const Projects = () => {
           title={projects[key].title}
           image={projects[key].image}
           text={projects[key].text}
+          repoLink={projects[key].repoLink}
+          liveLink={projects[key].liveLink}
         />
       ))}
     </Container>

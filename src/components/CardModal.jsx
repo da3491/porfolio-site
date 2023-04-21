@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { GrClose } from "react-icons/gr";
+import { useTheme } from "./ThemeContext";
 
 const StyledModalOverlay = styled.div`
   position: fixed;
@@ -32,10 +33,11 @@ const StyledButtons = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2em;
+  margin-top: 2em;
 `;
 
 const StyledButton = styled.button`
-  background: #8476b1;
+  background: ${(props) => props.themecolor};
   border: none;
   color: white;
   padding: 0.5em 1em;
@@ -43,7 +45,11 @@ const StyledButton = styled.button`
   font-size: 16px;
   cursor: pointer;
   &:hover {
-    background: #715b9f;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
   }
 `;
 
@@ -53,21 +59,36 @@ const ModalClose = styled.button`
   right: 0.5em;
   background: none;
   border: none;
+  border-radius: 3px;
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background: #dc3546;
+  }
   svg {
-    color: #8476b1;
+    font-size: 2em;
+  }
+  svg:hover {
+    color: white;
   }
 `;
 const StyledImage = styled.img`
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 2em 0;
 `;
 
 const StyledTags = styled.span``;
 
-const CardModal = ({ image, title, text, closeModal }) => {
+const CardModal = ({ image, title, text, closeModal, repoLink, liveLink }) => {
+  const theme = useTheme();
   return (
     <StyledModalOverlay>
       <StyledModal>
@@ -79,8 +100,16 @@ const CardModal = ({ image, title, text, closeModal }) => {
         <StyledTags></StyledTags>
         <p>{text}</p>
         <StyledButtons>
-          <StyledButton>Repo</StyledButton>
-          <StyledButton>Live</StyledButton>
+          <StyledButton themecolor={theme.colors.accent}>
+            <a href={repoLink} target="_blank">
+              Repo
+            </a>
+          </StyledButton>
+          <StyledButton themecolor={theme.colors.accent}>
+            <a href={liveLink} target="_blank">
+              Live
+            </a>
+          </StyledButton>
         </StyledButtons>
       </StyledModal>
     </StyledModalOverlay>

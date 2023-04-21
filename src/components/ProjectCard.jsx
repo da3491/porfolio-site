@@ -40,7 +40,7 @@ const Button = styled.button`
   padding: 0.4em 1em;
 `;
 
-const ProjectCard = ({ title, image, text }) => {
+const ProjectCard = ({ title, image, text, repoLink, liveLink }) => {
   const theme = useTheme();
   const [visibleModal, setVisibleModal] = useState(false);
 
@@ -77,6 +77,8 @@ const ProjectCard = ({ title, image, text }) => {
             title={title}
             image={image}
             text={text}
+            repoLink={repoLink}
+            liveLink={liveLink}
             closeModal={() => setVisibleModal(false)}
           />
         )}

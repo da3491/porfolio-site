@@ -3,8 +3,8 @@ import { useSwipeable } from "react-swipeable";
 import styled from "styled-components";
 // import Projects from "./Projects";
 const Projects = React.lazy(() => import("./Projects"));
-// import Skills from "./Skills";
-const Skills = React.lazy(() => import("./Skills"));
+import Skills from "./Skills";
+// const Skills = React.lazy(() => import("./Skills"));
 
 const Container = styled.div`
   position: absolute;

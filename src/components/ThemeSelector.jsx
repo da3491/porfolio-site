@@ -1,4 +1,4 @@
-import { useThemeUpdate } from "./ThemeContext";
+import { useTheme, useThemeUpdate } from "./ThemeContext";
 import themes from "../utils/themes";
 import styled from "styled-components";
 
@@ -37,7 +37,15 @@ const StyledButton = styled.button`
 
 const ThemeSelector = () => {
   const changeTheme = useThemeUpdate();
+  const selectedTheme = useTheme();
 
+  const isThemeSelected = (themeKey) => {
+    // console.log("input is,", themeKey);
+    // console.log("theme is,", selectedTheme);
+    return selectedTheme === themeKey;
+  };
+
+  console.log(selectedTheme === themes.theme1);
   return (
     <StyledThemeSelector id="theme_Buttons">
       {Object.keys(themes).map((theme) => (
@@ -47,6 +55,7 @@ const ThemeSelector = () => {
             changeTheme(theme);
           }}
           theme={themes[theme].colors.accent}
+          // className={isThemeSelected(theme) ? "active" : ""}
         ></StyledButton>
       ))}
     </StyledThemeSelector>

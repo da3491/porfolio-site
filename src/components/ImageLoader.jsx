@@ -31,24 +31,41 @@ const StyledImage = styled.img`
   z-index: -1000;
 `;
 
+const imageSrc = "/src/assets/images";
+
 const ImageLoader = () => {
   const theme = useTheme();
   const [imgSrc, setImgSrc] = useState(null);
+  const [screenWidth, setScreenWidth] = useState(
+    window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth
+  );
 
   useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(
+        window.innerWidth ||
+          document.documentElement.clientWidth ||
+          document.body.clientWidth
+      );
+    };
+    window.addEventListener("resize", handleResize);
+
+    const imageToLoad =
+      screenWidth >= 768 ? theme.imageDesktop : theme.imageMobile;
     async function loadImage() {
       const { default: image } = await import(
-        `../assets/images/${theme.imageMobile}.jpg`
+        `../assets/images/${imageToLoad}.jpg`
       );
       setImgSrc(image);
     }
     loadImage();
-  }, [theme.imageDesktop]);
-
-  // const srcSet = `"../assets/images/${theme.imageMobile}" 1200w, "../assets/images/${theme.imageDesktop}" 2400w`;
-
-  console.log(theme.imageDesktop);
-  console.log(theme.imageMobile);
+    // Clean up event listener on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [screenWidth]);
 
   return (
     <Overlay>
@@ -56,7 +73,10 @@ const ImageLoader = () => {
         priority
         rel="preload"
         src={imgSrc}
-        // srcSet={srcSet}
+        srcset={`
+        ${theme.imageMobile} 480w,
+        ${theme.imageDesktop} 800w`}
+        alt="Background image"
         role="presentation"
         fetchpriority="high"
       />

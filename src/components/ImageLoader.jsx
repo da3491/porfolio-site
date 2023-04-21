@@ -56,7 +56,7 @@ const ImageLoader = () => {
       screenWidth >= 768 ? theme.imageDesktop : theme.imageMobile;
     async function loadImage() {
       const { default: image } = await import(
-        `../assets/images/${imageToLoad}.jpg`
+        `../assets/images/${imageToLoad}.webp`
       );
       setImgSrc(image);
     }

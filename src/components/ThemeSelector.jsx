@@ -51,6 +51,7 @@ const ThemeSelector = () => {
       {Object.keys(themes).map((theme) => (
         <StyledButton
           key={theme}
+          aria-label={`Select ${theme}`}
           onClick={() => {
             changeTheme(theme);
           }}

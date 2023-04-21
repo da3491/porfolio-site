@@ -20,7 +20,7 @@ const CardInfo = styled.div`
   align-items: center;
   padding: 0 1.6rem;
 `;
-const Title = styled.h3`
+const Title = styled.div`
   font-size: var(--fs-1);
   font-weight: 300;
   margin: 0;

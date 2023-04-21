@@ -33,13 +33,19 @@ const ContactLinks = () => {
 
   return (
     <StyledIconGroup themecolor={theme.colors.accent}>
-      <StyledLinks href="/resume.com">
+      <StyledLinks href="/resume.com" aria-label="Contact me through Gmail">
         <FaGoogle />
       </StyledLinks>
-      <StyledLinks href="https://github.com/da3491">
+      <StyledLinks
+        href="https://github.com/da3491"
+        aria-label="View my github profile"
+      >
         <FaGithub />
       </StyledLinks>
-      <StyledLinks href="https://linkedin.com/da3491">
+      <StyledLinks
+        href="https://linkedin.com/da3491"
+        aria-label="View my Linkedin Profile"
+      >
         <FaLinkedinIn />
       </StyledLinks>
     </StyledIconGroup>

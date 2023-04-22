@@ -39,7 +39,7 @@ const GlobalStyles = createGlobalStyle`
 
 `;
 const Container = styled.div`
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
 

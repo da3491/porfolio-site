@@ -17,21 +17,24 @@ const StyledThemeSelector = styled.div`
 
 const StyledButton = styled.button`
   display: inline-block;
-  background-color: transparent;
+  background-color: ${(props) => props.theme};
+  // border: 3px solid ${(props) => props.theme};
+  // border-bottom: 4px solid #ccc;
   border: none;
-  border-bottom: 4px solid #ccc;
   width: clamp(50px, 75px, 100px);
-  height: 10px;
+  height: 5px;
+  cursor: pointer;
 
   &:hover,
   &:active,
   &:focus {
-    border-bottom: 5px solid ${(props) => props.theme};
+    transform: scale(1.05, 1.1);
+    box-shadow: 0px 0px 5px #fff;
   }
 
   @media (min-width: 1200px) {
     width: 75px;
-    height: 12px;
+    height: 7px;
   }
 `;
 
@@ -45,7 +48,6 @@ const ThemeSelector = () => {
     return selectedTheme === themeKey;
   };
 
-  console.log(selectedTheme === themes.theme1);
   return (
     <StyledThemeSelector id="theme_Buttons">
       {Object.keys(themes).map((theme) => (

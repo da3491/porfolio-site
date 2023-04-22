@@ -15,18 +15,40 @@ const StyledModalOverlay = styled.div`
   z-index: 10;
   color: black;
 `;
-
 const StyledModal = styled.div`
   position: relative;
-  background: white;
-  border-radius: 10px;
+  background: ${(props) => props.themecolor};
+  border-radius: 5px;
+  color: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   padding: 30px;
   width: 80%;
   max-width: 500px;
   h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    font-weight: 400;
+  }
+  p {
+    font-weight: 300;
+    font-size: ;
+    line-height: 1.5;
+    margin: 1rem 0;
+  }
+`;
+const StyledTags = styled.span`
+  color: ${(props) => props.themecolor};
+  font-size: 1rem;
+  font-weight: 200;
+  margin: 5px 0 5px 5px;
+
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+
+  & :not(:last-child) {
+    border-right: 1px solid ${(props) => props.themecolor};
+    padding-right: 5px;
   }
 `;
 const StyledButtons = styled.div`
@@ -35,7 +57,6 @@ const StyledButtons = styled.div`
   gap: 2em;
   margin-top: 2em;
 `;
-
 const StyledButton = styled.button`
   background: ${(props) => props.themecolor};
   border: none;
@@ -44,24 +65,30 @@ const StyledButton = styled.button`
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
-  &:hover {
-  }
+  transition: transform 0.1s linear, border 0.1s linear;
 
   a {
     text-decoration: none;
     color: white;
   }
-`;
 
+  &:hover,
+  &:active,
+  &:focus {
+    transform: scale(1.025, 1.05);
+    box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+`;
 const ModalClose = styled.button`
   position: absolute;
   top: 0.5em;
   right: 0.5em;
   background: none;
+  color: white;
   border: none;
   border-radius: 3px;
-  width: 2em;
-  height: 2em;
+  width: 1.5em;
+  height: 1.5em;
   cursor: pointer;
 
   display: flex;
@@ -73,6 +100,10 @@ const ModalClose = styled.button`
   }
   svg {
     font-size: 2em;
+    color: inherit;
+  }
+  svg path {
+    stroke: white;
   }
   svg:hover {
     color: white;
@@ -85,19 +116,33 @@ const StyledImage = styled.img`
   margin: 0 auto 2em 0;
 `;
 
-const StyledTags = styled.span``;
-
-const CardModal = ({ image, title, text, closeModal, repoLink, liveLink }) => {
+const CardModal = ({
+  image,
+  title,
+  tags,
+  text,
+  closeModal,
+  repoLink,
+  liveLink,
+}) => {
   const theme = useTheme();
   return (
     <StyledModalOverlay>
-      <StyledModal>
+      <StyledModal themecolor={theme.colors.darkGrey}>
         <ModalClose onClick={() => closeModal(false)}>
           <GrClose />
         </ModalClose>
         <StyledImage src={`../src/assets/images/${image}`} alt="Project1" />
         <h2>{title}</h2>
-        <StyledTags></StyledTags>
+        <StyledTags>
+          {tags.map((tag, index) => {
+            return (
+              <span key={tag} themecolor={theme.colors.accent}>
+                {tags[index]}{" "}
+              </span>
+            );
+          })}
+        </StyledTags>
         <p>{text}</p>
         <StyledButtons>
           <StyledButton themecolor={theme.colors.accent}>

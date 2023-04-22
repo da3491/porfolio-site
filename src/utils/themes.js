@@ -5,7 +5,7 @@ const themes = {
       darkGrey: "#1E3035ff",
       lightGrey: "#ACC8D2ff",
     },
-    imageDesktop: "mountain1-bailey-zindel-compressed",
+    imageDesktop: "mountain1-bailey-zindel",
     imageMobile: "mountain1-bailey-zindel-mobile",
   },
   theme2: {
@@ -14,7 +14,7 @@ const themes = {
       lightGrey: "#B8C7E1ff",
       darkGrey: "#18161Bff",
     },
-    imageDesktop: "mountain2-john-towner-compressed",
+    imageDesktop: "mountain2-john-towner",
     imageMobile: "mountain2-john-towner-mobile",
   },
   theme3: {
@@ -23,7 +23,7 @@ const themes = {
       lightGrey: "#BEBCEAff",
       darkGrey: "#2C2F3Aff",
     },
-    imageDesktop: "mountain3-samuel-ferrara-compressed",
+    imageDesktop: "mountain3-samuel-ferrara",
     imageMobile: "mountain3-samuel-ferrara-mobile",
   },
 };

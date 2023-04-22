@@ -10,9 +10,14 @@ const StyledIconGroup = styled.div`
 
   display: flex;
   text-align: right;
-  font-size: var(--fs-2);
+  font-size: var(--fs-1);
+  // font-size: var(--fs-2);
   margin-bottom: 1em;
   gap: 0.5em;
+
+  @media (max-aspect-ratio: 3/4) {
+    font-size: 1.6rem;
+  }
 `;
 const StyledLinks = styled.a`
   color: inherit;

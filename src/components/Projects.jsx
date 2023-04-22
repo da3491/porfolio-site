@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import projects from "../utils/projects.js";
-// import projects from "../utils/projects-dummy.js";
 import ProjectCard from "./ProjectCard.jsx";
 
 const Container = styled.div`
@@ -18,6 +17,7 @@ const Projects = () => {
       {Object.keys(projects).map((key) => (
         <ProjectCard
           key={key}
+          tags={projects[key].tags}
           title={projects[key].title}
           image={projects[key].image}
           text={projects[key].text}

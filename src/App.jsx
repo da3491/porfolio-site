@@ -65,6 +65,8 @@ function App() {
       <GlobalStyles />
       <Container>
         <ImageLoader />
+        {/* <BackgroundAnimator /> */}
+        {/* <Background /> */}
         <CenteredContent>
           <ContactLinks />
           <Home />

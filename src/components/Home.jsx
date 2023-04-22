@@ -26,25 +26,30 @@ const Container = styled.div`
 const GridRow = styled.div`
   height: 100%;
   display: grid;
-  grid-template-rows: repeat(5, 20%);
+  grid-template-rows: repeat(10, 10%);
+
+  @media (max-aspect-ratio: 3/4) {
+    grid-template-rows: repeat(5, 20%);
+  }
 `;
 const Header = styled.h1`
   grid-row: 2/3;
 
   position: relative;
-  font-size: var(--fs-4);
+  // font-size: var(--fs-4);
+  font-size: 3.4rem;
   margin-bottom: 1em;
-  margin: 0;
+  margin-left: 1rem;
   font-weight: 300;
   text-align: left;
   color: white;
 
-  // @media (max-aspect-ratio: 3/4) {
-  //   grid-row: 1/2;
-  // }
+  @media (max-aspect-ratio: 3/4) {
+    font-size: 2rem;
+  }
 `;
 const Bio = styled.div`
-  grid-row: 3/5;
+  grid-row: 5/9;
   width: 100%;
   height: 100%;
 
@@ -53,28 +58,33 @@ const Bio = styled.div`
   align-items: center;
 
   background: rgba(0, 0, 0, 0.1);
-  border: 1px solid #555;
-  border-radius: 7px;
+  border-radius: 5px;
 
   @media (max-aspect-ratio: 3/4) {
     grid-row: 3/6;
   }
 `;
 const Paragraph = styled.p`
-  line-height: 1.2;
+  line-height: 1.5;
   // font-size: var(--fs--1);
   font-size: 1.2rem;
+  font-weight: 300;
   color: white;
   border-radius: 5px;
   margin: 1.5em;
+  padding: 0 5rem;
 
   @media (max-aspect-ratio: 3/4) {
     font-size: var(--fs-1);
+    padding: 0;
+    line-height: 1.4;
+    font-size: 0.9rem;
+    font-weight: 400;
   }
 `;
 const ContentButtons = styled.div`
   // Grid item stylings
-  grid-row: 2/3;
+  grid-row: 4/5;
   align-items: end;
 
   display: grid;
@@ -93,8 +103,11 @@ const ContentButton = styled.button`
   border: none;
 
   color: white;
-  font-size: var(--fs-1);
+  // font-size: var(--fs-1);
+  font-size: 1.8rem;
   padding-bottom: var(--space-xs);
+
+  cursor: pointer;
 
   & h2 {
     font-weight: 300;
@@ -102,12 +115,16 @@ const ContentButton = styled.button`
 
   &:hover,
   &:active {
-    box-shadow: inset 0px -2px 0px -1px white;
+    box-shadow: inset 0px -3px 0px -1px white;
+  }
+
+  @media (max-aspect-ratio: 3/4) {
+    font-size: 1.2rem;
   }
 `;
 const ContentLoaded = styled.div`
   // Grid item stylings
-  grid-row: 3/5;
+  grid-row: 5/9;
   @media (max-aspect-ratio: 3/4) {
     grid-row: 2/6;
     margin-bottom: 1em;
@@ -135,8 +152,8 @@ const Home = () => {
           <Paragraph>
             I'm Drew, a Front-End developer who loves learning new technologies,
             building clean codebases and interfaces, and growing as a
-            professional coder and fellow human. I'm a huge foodie who loves to
-            travel and see nature (clearly). <br />
+            professional and individual. I'm a huge foodie who loves to travel
+            and a mountain view (as you might guess). <br />
             <br />I appreciate you checking out my site! Feel free to reach out
             if interested in working with me on your project.
           </Paragraph>

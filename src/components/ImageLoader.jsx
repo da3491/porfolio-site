@@ -65,7 +65,7 @@ const ImageLoader = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [screenWidth]);
+  }, [screenWidth, theme]);
 
   return (
     <Overlay>

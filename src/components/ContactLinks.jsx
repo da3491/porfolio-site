@@ -14,6 +14,7 @@ const StyledIconGroup = styled.div`
   // font-size: var(--fs-2);
   margin-bottom: 1em;
   gap: 0.5em;
+  z-index: 5;
 
   @media (max-aspect-ratio: 3/4) {
     font-size: 1.6rem;

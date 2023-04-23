@@ -37,7 +37,7 @@ const Header = styled.h1`
 
   position: relative;
   // font-size: var(--fs-4);
-  font-size: 3rem;
+  font-size: 3.4rem;
   margin-bottom: 1em;
   margin-left: 1rem;
   font-weight: 300;
@@ -65,6 +65,7 @@ const Bio = styled.div`
   }
 `;
 const Paragraph = styled.p`
+  line-height: 1.6;
   // font-size: var(--fs--1);
   font-size: 1.2rem;
   font-weight: 300;

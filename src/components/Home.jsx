@@ -71,7 +71,6 @@ const Paragraph = styled.p`
   color: white;
   border-radius: 5px;
   margin: 1.5em;
-  padding: 0 5rem;
 
   @media (max-aspect-ratio: 3/4) {
     font-size: var(--fs-1);

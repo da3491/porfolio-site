@@ -21,7 +21,6 @@ const Overlay = styled.div`
     );
   }
 `;
-
 const StyledImage = styled.img`
   position: relative;
   width: 100%;
@@ -29,9 +28,36 @@ const StyledImage = styled.img`
   z-index: -10;
   object-fit: cover;
   z-index: -1000;
-`;
+  transition: opacity 0.05s ease-in-out;
 
-const imageSrc = "/src/assets/images";
+  &.fade-in {
+    opacity: 1;
+  }
+
+  &.fade-out {
+    opacity: 0;
+  }
+`;
+// const StyledImage = styled.div`
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   z-index: -10;
+
+//   background-image: url(${(props) => props.src});
+//   background-position: center center;
+//   background-size: cover;
+//   // transition: opacity 0.05s ease-in-out;
+//   transition: background-image 250ms;
+
+//   // &.fade-in {
+//   //   opacity: 1;
+//   // }
+
+//   // &.fade-out {
+//   //   opacity: 0;
+//   // }
+// `;
 
 const ImageLoader = () => {
   const theme = useTheme();
@@ -42,6 +68,7 @@ const ImageLoader = () => {
       document.body.clientWidth
   );
 
+  // Check for screen size and change to correct picture
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(

@@ -18,8 +18,6 @@ const StyledThemeSelector = styled.div`
 const StyledButton = styled.button`
   display: inline-block;
   background-color: ${(props) => props.theme};
-  // border: 3px solid ${(props) => props.theme};
-  // border-bottom: 4px solid #ccc;
   border: none;
   width: clamp(50px, 75px, 100px);
   height: 5px;

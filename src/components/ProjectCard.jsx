@@ -22,7 +22,7 @@ const CardInfo = styled.div`
 `;
 const Title = styled.div`
   // font-size: var(--fs-1);
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   font-weight: 300;
   margin: 0;
 

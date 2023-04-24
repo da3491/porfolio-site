@@ -18,6 +18,7 @@ const P = styled.p`
   background-color: ${(props) => props.darkGrey};
   border-radius: 3px;
   font-weight: 300;
+  font-size: 1.4rem;
 
   grid-column: 1/3;
   grid-row: 1/4;
@@ -35,9 +36,9 @@ const Skills = () => {
   return (
     <Grid>
       <P accent={theme.colors.accent} darkGrey={theme.colors.darkGrey}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius rerum
-        consectetur voluptate assumenda debitis facilis natus beatae voluptates
-        quisquam error?
+        As a developer, I have a strong appetite for learning and enjoy
+        exploring new technologies. I'm always eager to expand my skill set and
+        stay up-to-date with the latest advancements in web development.
       </P>
       {Object.entries(skills).map((skill, index) => {
         return <Skill key={index} name={skill[1].name} icon={skill[1].icon} />;

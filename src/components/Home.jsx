@@ -73,9 +73,9 @@ const Paragraph = styled.p`
 
   @media (max-aspect-ratio: 3/4) {
     font-size: var(--fs-1);
-    padding: 0;
-    line-height: 1.4;
-    font-size: 1.1rem;
+    Padding: 0;
+    line-height: 1.2;
+    font-size: 1rem;
     font-weight: 400;
   }
 `;

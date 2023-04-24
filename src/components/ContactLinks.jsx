@@ -16,6 +16,7 @@ const StyledIconGroup = styled.div`
   gap: 0.5em;
   z-index: 5;
 
+  transition: color 300ms ease-in-out;
   @media (max-aspect-ratio: 3/4) {
     font-size: 1.6rem;
   }

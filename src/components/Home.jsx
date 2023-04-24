@@ -18,10 +18,8 @@ const Container = styled.div`
 
   @media (max-aspect-ratio: 3/4) {
     grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
   }
-  // @media (min-width: 1400px) {
-  //   gap: 8em;
-  // }
 `;
 const GridRow = styled.div`
   height: 100%;
@@ -102,7 +100,6 @@ const ContentButton = styled.button`
   border: none;
 
   color: white;
-  // font-size: var(--fs-1);
   font-size: 1.5rem;
   padding-bottom: var(--space-xs);
 
@@ -112,9 +109,8 @@ const ContentButton = styled.button`
     font-weight: 300;
   }
 
-  &:hover,
-  &:active {
-    box-shadow: inset 0px -3px 0px -1px white;
+  &#project_button {
+    box-shadow: inset 0px -4px 0px -1px white;
   }
 
   @media (max-aspect-ratio: 3/4) {
@@ -122,7 +118,6 @@ const ContentButton = styled.button`
   }
 `;
 const ContentLoaded = styled.div`
-  // Grid item stylings
   grid-row: 5/9;
   @media (max-aspect-ratio: 3/4) {
     grid-row: 2/6;
@@ -143,6 +138,21 @@ const Home = () => {
     },
     // ...config,
   });
+
+  const handleSelection = (e) => {
+    setContent(!content);
+
+    const buttons = document
+      .getElementById("content_buttons")
+      .querySelectorAll("button");
+
+    buttons.forEach((button) => {
+      button.style.boxShadow = "none";
+    });
+
+    e.target.parentNode.style.boxShadow = "inset 0px -4px 0px -1px white";
+  };
+
   return (
     <Container>
       <GridRow>
@@ -159,11 +169,14 @@ const Home = () => {
         </Bio>
       </GridRow>
       <GridRow>
-        <ContentButtons>
-          <ContentButton onClick={() => setContent(true)}>
+        <ContentButtons id="content_buttons">
+          <ContentButton
+            id="project_button"
+            onClick={(e) => handleSelection(e)}
+          >
             <h2>Projects</h2>
           </ContentButton>
-          <ContentButton onClick={() => setContent(false)}>
+          <ContentButton id="skills_button" onClick={(e) => handleSelection(e)}>
             <h2>Skills</h2>
           </ContentButton>
         </ContentButtons>

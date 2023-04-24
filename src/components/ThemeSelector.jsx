@@ -1,4 +1,5 @@
-import { useTheme, useThemeUpdate } from "./ThemeContext";
+import { useState } from "react";
+import { useThemeUpdate } from "./ThemeContext";
 import themes from "../utils/themes";
 import styled from "styled-components";
 
@@ -17,17 +18,18 @@ const StyledThemeSelector = styled.div`
 
 const StyledButton = styled.button`
   display: inline-block;
-  background-color: ${(props) => props.theme};
+  background-color: ${(props) => props.color};
   border: none;
   width: clamp(50px, 75px, 100px);
   height: 5px;
   cursor: pointer;
+  transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
 
   &:hover,
   &:active,
   &:focus {
     transform: scale(1.05, 1.1);
-    box-shadow: 0px 0px 5px #fff;
+    // box-shadow: 0px 0px 5px #fff;
   }
 
   @media (min-width: 1200px) {
@@ -38,12 +40,11 @@ const StyledButton = styled.button`
 
 const ThemeSelector = () => {
   const changeTheme = useThemeUpdate();
-  const selectedTheme = useTheme();
+  const [focusedButton, setFocusedButton] = useState("theme1");
 
-  const isThemeSelected = (themeKey) => {
-    // console.log("input is,", themeKey);
-    // console.log("theme is,", selectedTheme);
-    return selectedTheme === themeKey;
+  const handleClick = (theme) => {
+    setFocusedButton(theme);
+    changeTheme(theme);
   };
 
   return (
@@ -53,10 +54,11 @@ const ThemeSelector = () => {
           key={theme}
           aria-label={`Select ${theme}`}
           onClick={() => {
-            changeTheme(theme);
+            handleClick(theme);
           }}
-          theme={themes[theme].colors.accent}
-          // className={isThemeSelected(theme) ? "active" : ""}
+          color={
+            theme === focusedButton ? themes[theme].colors.accent : "white"
+          }
         ></StyledButton>
       ))}
     </StyledThemeSelector>

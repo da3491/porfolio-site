@@ -1,56 +1,44 @@
-import {
-  FaGitAlt,
-  FaHtml5,
-  FaCss3Alt,
-  FaBootstrap,
-  FaReact,
-} from "react-icons/fa";
-import {
-  SiJavascript,
-  SiRuby,
-  SiRubyonrails,
-  SiHeroku,
-  SiNetlify,
-} from "react-icons/si";
-
 const skills = {
   skill1: {
     name: "HTML/CSS",
-    icon: { FaHtml5, FaCss3Alt },
+    icon: "./src/assets/svg/css.svg",
   },
   skill2: {
-    name: "Bootstrap",
-    icon: FaBootstrap,
+    name: "JavaScript",
+    icon: "./src/assets/svg/js.svg",
   },
   skill3: {
-    name: "JavaScript",
-    icon: SiJavascript,
+    name: "React",
+    icon: "./src/assets/svg/react.svg",
   },
   skill4: {
-    name: "React",
-    icon: FaReact,
+    name: "Bootstrap",
+    icon: "./src/assets/svg/bootstrap.svg",
   },
   skill5: {
-    name: "Ruby",
-    icon: SiRuby,
+    name: "Tailwind",
+    icon: "./src/assets/svg/bootstrap.svg",
   },
   skill6: {
-    name: "Ruby On Rails",
-    icon: SiRubyonrails,
-  },
-
-  skill7: {
     name: "Git",
-    icon: FaGitAlt,
+    icon: "./src/assets/svg/git.svg",
+  },
+  skill7: {
+    name: "Heroku",
+    icon: "./src/assets/svg/heroku.svg",
   },
   skill8: {
-    name: "Heroku",
-    icon: SiHeroku,
-  },
-  skill9: {
     name: "Netlify",
-    icon: SiNetlify,
+    icon: "./src/assets/svg/netlify.svg",
   },
+  // skill7: {
+  //   name: "Ruby",
+  //   icon: SiRuby,
+  // },
+  // skill8: {
+  //   name: "Ruby On Rails",
+  //   icon: SiRubyonrails,
+  // },
 };
 
 export default skills;

@@ -12,6 +12,7 @@ const Card = styled.div`
   color: white;
   border: 1px solid #333;
   border-radius: 3px;
+  transition: background-color 300ms ease-in-out;
 `;
 const CardInfo = styled.div`
   height: 100%;
@@ -39,6 +40,8 @@ const StyledTags = styled.span`
   display: flex;
   gap: 5px;
 
+  transition: color 300ms ease-in-out;
+
   & :not(:last-child) {
     border-right: 1px solid ${(props) => props.themecolor};
     padding-right: 5px;
@@ -58,13 +61,18 @@ const Button = styled.button`
   border-radius: 3px;
   padding: 0.4em 1em;
   cursor: pointer;
-  transition: transform 0.1s linear, border 0.1s linear;
+  transition: transform 0.1s linear, border 0.1s linear,
+    background 300ms ease-in-out;
 
   &:hover,
   &:active,
   &:focus {
     transform: scale(1.025, 1.05);
     box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  @media (max-aspect-ratio: 3/4) {
+    padding: 0.4rem 1.5em;
   }
 `;
 

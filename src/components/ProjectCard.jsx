@@ -23,7 +23,7 @@ const CardInfo = styled.div`
 `;
 const Title = styled.div`
   // font-size: var(--fs-1);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 300;
   margin: 0;
 
@@ -33,7 +33,7 @@ const Title = styled.div`
 `;
 const StyledTags = styled.span`
   color: ${(props) => props.themecolor};
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 300;
   margin-top: 5px;
 

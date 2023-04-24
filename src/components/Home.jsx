@@ -65,7 +65,7 @@ const Bio = styled.div`
 const Paragraph = styled.p`
   line-height: 1.6;
   // font-size: var(--fs--1);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 300;
   color: white;
   border-radius: 5px;
@@ -100,7 +100,7 @@ const ContentButton = styled.button`
   border: none;
 
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   padding-bottom: var(--space-xs);
 
   cursor: pointer;

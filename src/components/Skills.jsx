@@ -30,7 +30,7 @@ const P = styled.p`
   padding: 1em;
 
 @media (max-aspect-ratio: 3/4){
- font-size: 1.1rem;
+ font-size: 1rem;
  line-height: 1;
 }
 `;
@@ -41,9 +41,8 @@ const Skills = () => {
   return (
     <Grid>
       <P accent={theme.colors.accent} darkGrey={theme.colors.darkGrey}>
-        As a developer, I have a strong appetite for learning and enjoy
-        exploring new technologies. I'm always eager to expand my skill set and
-        stay up-to-date with the latest advancements in web development.
+        I have a passion for learning and enjoy
+        exploring new technologies. I'm always eager to expand my skill set with the latest advancements in web development.
       </P>
       {Object.entries(skills).map((skill, index) => {
         return <Skill key={index} name={skill[1].name} icon={skill[1].icon} />;

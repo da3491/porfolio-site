@@ -1,6 +1,6 @@
 ## Screenshots
 
-![Site Screenshot](https://raw.githubusercontent.com/da3491/react-portfolio/main/src/images/PortfolioDesign.jpg)
+![Site Screenshot](https://github.com/da3491/porfolio-site/blob/main/src/assets/images/SitePreview.jpg)
 
 # Portfolio
 

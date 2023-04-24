@@ -63,20 +63,20 @@ const Bio = styled.div`
   }
 `;
 const Paragraph = styled.p`
-  line-height: 1.6;
-  // font-size: var(--fs--1);
-  font-size: 1.4rem;
-  font-weight: 400;
   color: white;
   border-radius: 5px;
-  margin: 1.5em;
+
+  font-size: clamp(0.9rem, 1vw + 0.2rem, 1.4rem);
+  font-weight: 300;
+  line-height: clamp(1, 1vw + 0.1, 9999px);
+  margin: 1em;
+  padding: calc(1em + clamp(0px, 1vw, 1em));
 
   @media (max-aspect-ratio: 3/4) {
     font-size: var(--fs-1);
-    Padding: 0;
     line-height: 1.2;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 300;
   }
 `;
 const ContentButtons = styled.div`
@@ -114,7 +114,7 @@ const ContentButton = styled.button`
   }
 
   @media (max-aspect-ratio: 3/4) {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 `;
 const ContentLoaded = styled.div`
@@ -159,12 +159,12 @@ const Home = () => {
         <Header>Hey, there.</Header>
         <Bio>
           <Paragraph>
-            I'm Drew, a Front-End developer who loves learning new technologies,
-            building clean codebases and interfaces, and growing as a
-            professional and individual. I'm a huge foodie who loves to travel
-            and a mountain view (as you might guess). <br />
-            <br />I appreciate you checking out my site! Feel free to reach out
-            if interested in working with me on your project.
+            A Front-End developer who loves learning new technologies, and
+            building clean codebases and interfaces. Also a huge foodie who
+            loves to travel and a mountain views. <br />
+            <br />
+            Thanks for checking out my site! Feel free to reach out if
+            interested in working with me!
           </Paragraph>
         </Bio>
       </GridRow>

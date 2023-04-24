@@ -19,7 +19,7 @@ const CardInfo = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1.6rem;
+  padding: 0 clamp(0.9rem, 1vw + 0.2rem, 1.4rem);
 `;
 const Title = styled.div`
   // font-size: var(--fs-1);
@@ -34,6 +34,8 @@ const Title = styled.div`
 const StyledTags = styled.span`
   color: ${(props) => props.themecolor};
   font-size: 1.4rem;
+  font-size: clamp(1rem, 1vw + 0.2rem, 1.4rem);
+
   font-weight: 300;
   margin-top: 5px;
 

@@ -12,7 +12,7 @@ const Container = styled.div`
   padding-left: 1em;
 
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
 
   transition: background-color 300ms ease-in-out, transform 200ms ease-in-out;

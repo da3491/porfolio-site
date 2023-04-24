@@ -11,7 +11,8 @@ const Grid = styled.div`
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(7, 1fr);
+  // grid-template-rows: repeat(7, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   gap: 0.1em;
 `;
 const P = styled.p`
@@ -29,10 +30,10 @@ const P = styled.p`
 
   padding: 1em;
 
-@media (max-aspect-ratio: 3/4){
- font-size: 1rem;
- line-height: 1;
-}
+  @media (max-aspect-ratio: 3/4) {
+    font-size: 1rem;
+    line-height: 1;
+  }
 `;
 
 const Skills = () => {
@@ -40,10 +41,10 @@ const Skills = () => {
 
   return (
     <Grid>
-      <P accent={theme.colors.accent} darkGrey={theme.colors.darkGrey}>
+      {/* <P accent={theme.colors.accent} darkGrey={theme.colors.darkGrey}>
         I have a passion for learning and enjoy
         exploring new technologies. I'm always eager to expand my skill set with the latest advancements in web development.
-      </P>
+      </P> */}
       {Object.entries(skills).map((skill, index) => {
         return <Skill key={index} name={skill[1].name} icon={skill[1].icon} />;
       })}

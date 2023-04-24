@@ -18,12 +18,14 @@ const StyledModalOverlay = styled.div`
 const StyledModal = styled.div`
   position: relative;
   background: ${(props) => props.themecolor};
-  border-radius: 5px;
   color: white;
+  border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
   padding: 30px;
   width: 80%;
   max-width: 500px;
+
   h2 {
     font-size: 1.6rem;
     margin-bottom: 5px;
@@ -38,6 +40,7 @@ const StyledModal = styled.div`
 `;
 const StyledTags = styled.span`
   color: ${(props) => props.themecolor};
+
   font-size: 1rem;
   font-weight: 200;
   margin: 5px 0 5px 5px;
@@ -79,7 +82,7 @@ const StyledButton = styled.button`
     box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.5);
   }
 `;
-const ModalClose = styled.button`
+const CloseButton = styled.button`
   position: absolute;
   top: 0.5em;
   right: 0.5em;
@@ -126,13 +129,15 @@ const CardModal = ({
   liveLink,
 }) => {
   const theme = useTheme();
+
+  const imageURL = new URL(`../assets/images/${image}`, import.meta.url).href;
   return (
     <StyledModalOverlay>
       <StyledModal themecolor={theme.colors.darkGrey}>
-        <ModalClose onClick={() => closeModal(false)}>
+        <CloseButton onClick={() => closeModal(false)}>
           <GrClose />
-        </ModalClose>
-        <StyledImage src={`../src/assets/images/${image}`} alt="Project1" />
+        </CloseButton>
+        <StyledImage src={imageURL} alt="Project1" />
         <h2>{title}</h2>
         <StyledTags>
           {tags.map((tag, index) => {

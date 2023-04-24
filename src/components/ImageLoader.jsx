@@ -38,26 +38,6 @@ const StyledImage = styled.img`
     opacity: 0;
   }
 `;
-// const StyledImage = styled.div`
-//   position: relative;
-//   width: 100%;
-//   height: 100%;
-//   z-index: -10;
-
-//   background-image: url(${(props) => props.src});
-//   background-position: center center;
-//   background-size: cover;
-//   // transition: opacity 0.05s ease-in-out;
-//   transition: background-image 250ms;
-
-//   // &.fade-in {
-//   //   opacity: 1;
-//   // }
-
-//   // &.fade-out {
-//   //   opacity: 0;
-//   // }
-// `;
 
 const ImageLoader = () => {
   const theme = useTheme();

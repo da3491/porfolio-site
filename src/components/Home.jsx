@@ -66,7 +66,7 @@ const Paragraph = styled.p`
   line-height: 1.6;
   // font-size: var(--fs--1);
   font-size: 1.4rem;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
   border-radius: 5px;
   margin: 1.5em;
@@ -75,7 +75,7 @@ const Paragraph = styled.p`
     font-size: var(--fs-1);
     padding: 0;
     line-height: 1.4;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: 400;
   }
 `;

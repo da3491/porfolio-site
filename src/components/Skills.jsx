@@ -28,6 +28,11 @@ const P = styled.p`
   align-items: center;
 
   padding: 1em;
+
+@media (max-aspect-ratio: 3/4){
+ font-size: 1.1rem;
+ line-height: 1;
+}
 `;
 
 const Skills = () => {
